@@ -11,10 +11,10 @@ e = 0.001
 
 # function about x^2
 def f(x):
-    return x
+    return x**3 + math.sin(x) * 10
 
 
-# 微分 fx
+# 微分
 def differential(x):
     return (f(x + e) - f(x)) / e
 
@@ -30,12 +30,14 @@ def integral(a, b):
         cnt += 1
         if cnt % 10 == 0:
             s = "x : " + str(x) + ", y : " + str(y) + ", n : " + str(n)
-            print(s)
+            # print(s)
 
         x += e
 
     return n
 
 
-# print("df(0) : " + str(differential(0)))
-print("f(x) [0 -> 1]: " + str(integral(0, 10)))
+print("df(0) : " + str(differential(0)))
+a = 0
+b = 10
+print(f"f(x) [{a} -> {b}]: " + str(integral(0, 10)))
